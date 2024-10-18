@@ -13,8 +13,13 @@ public class COnt : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        float horizontal = Input.GetAxis("Horizontal");
+        float vertical = Input.GetAxis("Vertical")
+
         Vector2 position = transform.position;
-        position.x = 0.1f;
+        position.y = 0.1f * vertical;
+        position.x = 0.1f * horizontal;
+
         transform.position = position;
     }
 }

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class COnt : MonoBehaviour
+public class PLayerController : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -14,11 +14,11 @@ public class COnt : MonoBehaviour
     void Update()
     {
         float horizontal = Input.GetAxis("Horizontal");
-        float vertical = Input.GetAxis("Vertical")
+        float vertical = Input.GetAxis("Vertical");
 
         Vector2 position = transform.position;
-        position.y = 0.1f * vertical;
-        position.x = 0.1f * horizontal;
+        position.y = position.y + 5.0f * vertical * Time.deltaTime;
+        position.x = position.x + 5.0f * horizontal * Time.deltaTime; 
 
         transform.position = position;
     }

@@ -4,22 +4,31 @@ using UnityEngine;
 
 public class PLayerController : MonoBehaviour
 {
+    Rigidbody2D rigidbody2d;
+    float horizontal;
+    float vertical;
     // Start is called before the first frame update
     void Start()
     {
-        
+        rigidbody2d = GetComponent<Rigidbody2D>();
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        float horizontal = Input.GetAxis("Horizontal");
-        float vertical = Input.GetAxis("Vertical");
+         horizontal = Input.GetAxis("Horizontal");
+         vertical = Input.GetAxis("Vertical");
 
-        Vector2 position = transform.position;
+    }
+    void FixedUpdate()
+    {
+
+        Vector2 position = rigidbody2d.position;
         position.y = position.y + 5.0f * vertical * Time.deltaTime;
-        position.x = position.x + 5.0f * horizontal * Time.deltaTime; 
+        position.x = position.x + 5.0f * horizontal * Time.deltaTime;
 
-        transform.position = position;
+        rigidbody2d.MovePosition(position);
+
     }
 }

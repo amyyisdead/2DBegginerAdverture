@@ -7,7 +7,7 @@ public class DamageZone : MonoBehaviour
 {
  void OnTriggerStay2D(Collider2D other)
     {
-        PLayerController controller = other.GetComponent<PLayerController>();
+        SugerlandController controller = other.GetComponent<SugerlandController>();
 
         if(controller != null)
         {

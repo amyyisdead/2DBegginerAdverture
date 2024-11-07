@@ -54,7 +54,7 @@ public class EnemyController : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D other)
     {
-        PLayerController player = other.gameObject.GetComponent<PLayerController>();
+        SugerlandController player = other.gameObject.GetComponent<SugerlandController>();
         if (player != null)
         {
             player.ChangeHealth(-1);

@@ -1,16 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
+
 using UnityEngine;
 
-public class NewBehaviourScript : MonoBehaviour
+public class HealthCollectable : MonoBehaviour
 
     
 {
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        PLayerController controller = other.GetComponent<PLayerController>();
+        SugerlandController controller = other.GetComponent<SugerlandController>();
         if (controller != null)
         {
             if(controller.health < controller.maxHealth)
